@@ -258,21 +258,35 @@ attachment_path = "C:/Users/ryano/invoice.pdf"
 
 
 # Example long-running workflow
-print("Flow started.")
+print("####### Flow started.#######")
+
+print("***** STEP1 started *****")
 carbone_test()
 renderid,status,message = carbone_test()
 print('Render ID:', renderid)
 print('Status:', status)
 print('Message:', message)
 time.sleep(2)  # Simulate step 1
-print("Step 1 complete.")
+print("***** STEP1 completed *****")
+
+print("***** STEP2 started *****")
 status_code,content = getcarbonefile(renderid)
 time.sleep(2)  # Simulate step 2
 send_email_with_attachment(to_email, from_email, password, attachment_path)
 send_email_with_attachment1(to_email, from_email, password,content)
-print("Step 2 complete.")
+print("***** STEP2 completed *****")
+
+print("***** STEP3 started *****")
 time.sleep(2)  # Simulate final step
-print("Flow complete.")
+print("***** STEP3 completed *****")
+
+print("***** STEP4 started *****")
+time.sleep(2)  # Simulate final step
+print("***** STEP4 completed *****")
+
+
+time.sleep(2)  # Simulate final step
+print("######## Flow completed ########")
 
 
     
